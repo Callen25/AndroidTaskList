@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context="edu.maine.allen3.christopher.androidtasklist.NewTaskActivity"
+    android:theme="@style/AppTheme">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.design.widget.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/AppTheme.AppBarOverlay">
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/add_edit_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                android:elevation="4dp"
+                app:popupTheme="@style/AppTheme.PopupOverlay">
+                <Button
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:background="@drawable/ic_close_black_24dp"
+                    android:id="@+id/close_button" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/add_edit_label"
+                    android:text="Add Task"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="#FFFFFF"
+                    android:layout_gravity="center_horizontal"
+                    />
+
+            </android.support.v7.widget.Toolbar>
+
+        </android.support.design.widget.AppBarLayout>
+
+
+
+        <EditText
+
+            android:id="@+id/newtask_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/newtask_name"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"/>
+
+        <EditText
+            android:id="@+id/newtask_desc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textMultiLine"
+            android:lines="2"
+            android:hint="@string/newtask_desc"
+            android:layout_below="@+id/newtask_name"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"/>
+
+        <DatePicker
+            android:id="@+id/newtask_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:datePickerMode="calendar"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/newtask_desc"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/newtask_date"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:text="Completed"
+                android:id="@+id/newtask_completedtext"/>
+            <Switch
+                android:id="@+id/newtask_completeSwitch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@+id/newtask_completedtext"/>
+        </LinearLayout>
+    </RelativeLayout>
+</android.support.design.widget.CoordinatorLayout>
+
